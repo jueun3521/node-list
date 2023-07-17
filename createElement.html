@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>createElement 할일 목록 추가</title>
+</head>
+<body>
+    <h1>할 일 목록</h1>
+    <input type="text" id="newTaskInput" placeholder="할 일을 입력하세요.">
+        <button onclick="assTask">추가</button>
+        <ul id="taskList">
+            <!-- 할 일이 여기에 동적으로 추가됩니다. -->
+        </ul>
+
+        <script>
+            // 새로운 할 일을 추가하는 함수
+            function addTask() {
+                var newTaskInput = document.getElementById("newTaskInput")
+                var teskList = document.getElementById("taskList")
+                // 입력된 내용 가져오기
+                var taskText = newTaskInput.value;
+                // <li> 요소에 생성
+                    var newTask = document.createElement("li");
+                    // <li> 요소에 텍스트 콘텐츠 설정
+                    newTask.textContent = taskText;
+                    teskList.appendChild(newTask);
+                    // 입력 필드 비우기
+                    newTaskInput.value  = "";
+
+            }
+        </script>
+</body>
+</html>
